@@ -74,9 +74,9 @@ public interface PlayerStats {
 
     /**
      * The inventory slot number of which item is being held.
+     *
      * <p>
-     * Since the value can never be null, and is by default 0, this will always
-     * return a valid integer.
+     * <b>This will always return a valid integer.</b>
      *
      * @return The slot the item being held
      */
@@ -84,61 +84,62 @@ public interface PlayerStats {
 
     /**
      * Player's health, from 0 to 20.
-     * <p>
-     * Since the value can never be null, and is by default 0, this will always
-     * return a valid integer.
      *
-     * @return
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
+     * @return Player's Health
      */
     public int getHealth();
 
     /**
      * Player's remaining air from 0 to 300.
+     *
      * <p>
-     * The value is never be null, and it's default value in the database is 0
-     * <br>
      * <b>This will always return a valid integer.</b>
      *
-     * @return
+     * @return Player's remaining air
      */
-    public int getRemainingAir();
-
     public int getRemainingAir();
 
     /**
      * Player's remaining fire ticks from -20 to 0.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getFireTicks();
-
     public int getFireTicks();
 
     /**
      * Player's food level from 0 to 20.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getFoodLevel();
-
     public int getFoodLevel();
 
     /**
      * Player's exhaustion.
      *
+     * <p>
+     * <b>This will always return a valid float.</b>
+     *
      * @return
      */
-    public float getExhaustion();
-
     public float getExhaustion();
 
     /**
      * Player's saturation.
      *
+     * <p>
+     * <b>This will always return a valid float.</b>
+     *
      * @return
      */
-    public float getSaturation();
-
     public float getSaturation();
 
     /**
@@ -153,28 +154,31 @@ public interface PlayerStats {
     /**
      * Experience level.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getLevel();
-
     public int getLevel();
 
     /**
      * Amount of experience gained toward next level as a percentage.
      *
+     * <p>
+     * <b>This will always return a valid float.</b>
+     *
      * @return
      */
-    public float getExp();
-
     public float getExp();
 
     /**
      * Total experience points.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getTotalExperience();
-
     public int getTotalExperience();
 
     /**
@@ -229,10 +233,11 @@ public interface PlayerStats {
      * This is only available if the Vault plugin is installed and providing
      * economy integration.
      *
+     * <p>
+     * <b>This will always return a valid double.</b>
+     *
      * @return
      */
-    public double getMoney();
-
     public double getMoney();
 
     /**
@@ -265,19 +270,21 @@ public interface PlayerStats {
     /**
      * Number of times the player has joined.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getJoins();
-
     public int getJoins();
 
     /**
      * Number of times the player has quit.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getQuits();
-
     public int getQuits();
 
     /**
@@ -310,10 +317,11 @@ public interface PlayerStats {
     /**
      * Number of times the player has been kicked
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getKicks();
-
     public int getKicks();
 
     /**
@@ -337,10 +345,11 @@ public interface PlayerStats {
     /**
      * Number of times the player has died.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getDeaths();
-
     public int getDeaths();
 
     /**
@@ -375,10 +384,11 @@ public interface PlayerStats {
     /**
      * The number of other players killed by this player.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getTotalPlayersKilled();
-
     public int getTotalPlayersKilled();
 
     /**
@@ -425,10 +435,11 @@ public interface PlayerStats {
     /**
      * The number of mobs killed by this player.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getTotalMobsKilled();
-
     public int getTotalMobsKilled();
 
     /**
@@ -474,10 +485,11 @@ public interface PlayerStats {
     /**
      * The total number of blocks broken.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getTotalBlocksBroken();
-
     public int getTotalBlocksBroken();
 
     /**
@@ -494,10 +506,11 @@ public interface PlayerStats {
     /**
      * The total number of blocks placed.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getTotalBlocksPlaced();
-
     public int getTotalBlocksPlaced();
 
     /**
@@ -520,15 +533,14 @@ public interface PlayerStats {
      */
     public int getAnimalsTamedMap();
 
-    public int getAnimalsTamedMap();
-
     /**
      * The total distance traveled.
      *
+     * <p>
+     * <b>This will always return a valid float.</b>
+     *
      * @return
      */
-    public float getTotalDistanceTraveled();
-
     public float getTotalDistanceTraveled();
 
     /**
@@ -567,10 +579,11 @@ public interface PlayerStats {
     /**
      * The total number of items dropped.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getItemsDroppedCount();
-
     public int getItemsDroppedCount();
 
     /**
@@ -586,10 +599,11 @@ public interface PlayerStats {
     /**
      * The total number of items picked up.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getItemsPickedUpCount();
-
     public int getItemsPickedUpCount();
 
     /**
@@ -605,10 +619,11 @@ public interface PlayerStats {
     /**
      * The total number of items crafted.
      *
+     * <p>
+     * <b>This will always return a valid integer.</b>
+     *
      * @return
      */
-    public int getItemsCraftedCount();
-
     public int getItemsCraftedCount();
 
     /**
@@ -643,90 +658,50 @@ public interface PlayerStats {
 
     /**
      * Number of times the player has slept in a bed.
+     * <p>
+     * <b>This will always return a valid integer.</b>
      *
      * @return
      */
     public int getTimesSlept();
 
-    public int getTimesSlept();
-
     public int getArrowsShot();
-
-    public int getArrowsShot();
-
-    public int getFiresStarted();
 
     public int getFiresStarted();
 
     public int getFishCaught();
 
-    public int getFishCaught();
-
     public int getChatMessages();
-
-    public int getChatMessages();
-
-    public int getPortalsCroassed();
 
     public int getPortalsCroassed();
 
     public int getWaterBucketsFilled();
 
-    public int getWaterBucketsFilled();
-
     public int getWaterBucketsEmptied();
-
-    public int getWaterBucketsEmptied();
-
-    public int getLavaBucketsFilled();
 
     public int getLavaBucketsFilled();
 
     public int getLavaBucketsEmptied();
 
-    public int getLavaBucketsEmptied();
-
     public int getCowsMilked();
-
-    public int getCowsMilked();
-
-    public int getMooshroomsMilked();
 
     public int getMooshroomsMilked();
 
     public int getMooshroomsSheared();
 
-    public int getMooshroomsSheared();
-
     public int getSheepSheared();
-
-    public int getSheepSheared();
-
-    public int getSheepDyed();
 
     public int getSheepDyed();
 
     public int getLifetimeExpierience();
 
-    public int getLifetimeExpierience();
-
     public int getItemsEnchanted();
-
-    public int getItemsEnchanted();
-
-    public int getItemEnchantmentLevels();
 
     public int getItemEnchantmentLevels();
 
     public float getSessionTime();
 
-    public float getSessionTime();
-
     public float getTotalTime();
-
-    public float getTotalTime();
-
-    public boolean getOnline();
 
     public boolean getOnline();
 

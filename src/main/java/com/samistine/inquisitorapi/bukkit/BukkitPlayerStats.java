@@ -65,37 +65,37 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getHealth() {
         Object result = data.get("health");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getRemainingAir() {
         Object result = data.get("remainingAir");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getFireTicks() {
         Object result = data.get("fireTicks");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getFoodLevel() {
         Object result = data.get("foodLevel");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public float getExhaustion() {
         Object result = data.get("exhaustion");
-        return (result instanceof Float) ? ((Float) result) : null;
+        return (result instanceof Float) ? ((Float) result) : 0;
     }
 
     @Override
     public float getSaturation() {
         Object result = data.get("saturation");
-        return (result instanceof Float) ? ((Float) result) : null;
+        return (result instanceof Float) ? ((Float) result) : 0;
     }
 
     @Override
@@ -107,19 +107,19 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getLevel() {
         Object result = data.get("level");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public float getExp() {
         Object result = data.get("exp");
-        return (result instanceof Float) ? ((Float) result) : null;
+        return (result instanceof Float) ? ((Float) result) : 0;
     }
 
     @Override
     public int getTotalExperience() {
         Object result = data.get("totalExperience");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
@@ -160,7 +160,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public double getMoney() {
         Object result = data.get("money");
-        return (result instanceof Double) ? (Double) result : null;
+        return (result instanceof Double) ? (Double) result : 0;
     }
 
     @Override
@@ -189,13 +189,13 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getJoins() {
         Object result = data.get("joins");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getQuits() {
         Object result = data.get("quits");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
@@ -219,7 +219,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getKicks() {
         Object result = data.get("kicks");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
@@ -237,7 +237,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getDeaths() {
         Object result = data.get("deaths");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
@@ -260,7 +260,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getTotalPlayersKilled() {
         Object result = data.get("totalPlayersKilled");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
@@ -288,7 +288,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getTotalMobsKilled() {
         Object result = data.get("totalMobsKilled");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
@@ -316,7 +316,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getTotalBlocksBroken() {
         Object result = data.get("totalBlocksBroken");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
@@ -327,7 +327,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getTotalBlocksPlaced() {
         Object result = data.get("totalBlocksPlaced");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
@@ -343,7 +343,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public float getTotalDistanceTraveled() {
         Object result = data.get("totalDistanceTraveled");
-        return (result instanceof Float) ? ((Float) result) : null;
+        return (result instanceof Float) ? ((Float) result) : 0;
     }
 
     @Override
@@ -404,121 +404,121 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getTimesSlept() {
         Object result = data.get("timesSlept");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getArrowsShot() {
         Object result = data.get("arrowsShot");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getFiresStarted() {
         Object result = data.get("firesStarted");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getFishCaught() {
         Object result = data.get("fishCaught");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getChatMessages() {
         Object result = data.get("chatMessages");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getPortalsCroassed() {
         Object result = data.get("portalsCrossed");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getWaterBucketsFilled() {
         Object result = data.get("waterBucketsFilled");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getWaterBucketsEmptied() {
         Object result = data.get("waterBucketsEmptied");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getLavaBucketsFilled() {
         Object result = data.get("lavaBucketsFilled");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getLavaBucketsEmptied() {
         Object result = data.get("lavaBucketsEmptied");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getCowsMilked() {
         Object result = data.get("cowsMilked");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getMooshroomsMilked() {
         Object result = data.get("mooshroomsMilked");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getMooshroomsSheared() {
         Object result = data.get("mooshroomsSheared");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getSheepSheared() {
         Object result = data.get("sheepSheared");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getSheepDyed() {
         Object result = data.get("sheepDyed");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getLifetimeExpierience() {
         Object result = data.get("lifetimeExperience");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getItemsEnchanted() {
         Object result = data.get("itemsEnchanted");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public int getItemEnchantmentLevels() {
         Object result = data.get("itemEnchantmentLevels");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override
     public float getSessionTime() {
         Object result = data.get("sessionTime");
-        return (result instanceof Float) ? ((Float) result) : null;
+        return (result instanceof Float) ? ((Float) result) : 0;
     }
 
     @Override
     public float getTotalTime() {
         Object result = data.get("totalTime");
-        return (result instanceof Float) ? ((Float) result) : null;
+        return (result instanceof Float) ? ((Float) result) : 0;
     }
 
     @Override
