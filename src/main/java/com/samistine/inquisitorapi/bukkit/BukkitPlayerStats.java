@@ -23,7 +23,7 @@ import org.json.simple.JSONObject;
  */
 public class BukkitPlayerStats implements PlayerStats {
 
-    private static String nullString = "";
+    private static Object
     private Map<String, Object> data;
 
     protected BukkitPlayerStats(InquisitorPlayer player, API pluginAPI) throws PlayerNotFoundException {
@@ -59,7 +59,7 @@ public class BukkitPlayerStats implements PlayerStats {
     @Override
     public int getHeldItemSlot() {
         Object result = data.get("heldItemSlot");
-        return (result instanceof Integer) ? ((Integer) result) : null;
+        return (result instanceof Integer) ? ((Integer) result) : 0;
     }
 
     @Override

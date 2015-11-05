@@ -16,18 +16,41 @@ import org.json.simple.JSONObject;
 public interface PlayerStats {
 
     /**
-     * Player's display name.
+     * Gets the player's display name.
+     * <p>
+     * If the player's display name was changed while he was offline, this will
+     * probably return his older display name
      *
-     * @return
+     * @return Player's display name
      */
     public String getDisplayName();
 
     /**
-     * Player's last client address.
+     * Gets the player's display name, returning a default value if not found.
+     * <p>
+     * If the player's display name was changed while he was offline, this will
+     * probably return his older display name
      *
-     * @return
+     * @param def The default value to return if the display name is not found
+     * @return Player's display name
+     */
+    public String getDisplayName(String def);
+
+    /**
+     * Gets the player's last client address.
+     *
+     * @return Player's Last Known Address
      */
     public String getAddress();
+
+    /**
+     * Gets the player's last client address, returning a default value if not
+     * found.
+     *
+     * @param def The default value to return if the address is not found
+     * @return Player's Last Known Address
+     */
+    public String getAddress(String def);
 
     /**
      * Player's inventory.<br>
@@ -37,6 +60,8 @@ public interface PlayerStats {
      */
     public InqItem[] getInventory();
 
+    public InqItem[] getInventory(InqItem[] def);
+
     /**
      * Player's armor.<br>
      * In slot order.
@@ -45,15 +70,23 @@ public interface PlayerStats {
      */
     public InqItem[] getArmor();
 
+    public InqItem[] getArmor();
+
     /**
      * The inventory slot number of which item is being held.
+     * <p>
+     * Since the value can never be null, and is by default 0, this will always
+     * return a valid integer.
      *
-     * @return
+     * @return The slot the item being held
      */
     public int getHeldItemSlot();
 
     /**
      * Player's health, from 0 to 20.
+     * <p>
+     * Since the value can never be null, and is by default 0, this will always
+     * return a valid integer.
      *
      * @return
      */
@@ -61,9 +94,15 @@ public interface PlayerStats {
 
     /**
      * Player's remaining air from 0 to 300.
+     * <p>
+     * The value is never be null, and it's default value in the database is 0
+     * <br>
+     * <b>This will always return a valid integer.</b>
      *
      * @return
      */
+    public int getRemainingAir();
+
     public int getRemainingAir();
 
     /**
@@ -73,11 +112,15 @@ public interface PlayerStats {
      */
     public int getFireTicks();
 
+    public int getFireTicks();
+
     /**
      * Player's food level from 0 to 20.
      *
      * @return
      */
+    public int getFoodLevel();
+
     public int getFoodLevel();
 
     /**
@@ -87,11 +130,15 @@ public interface PlayerStats {
      */
     public float getExhaustion();
 
+    public float getExhaustion();
+
     /**
      * Player's saturation.
      *
      * @return
      */
+    public float getSaturation();
+
     public float getSaturation();
 
     /**
@@ -101,11 +148,15 @@ public interface PlayerStats {
      */
     public String getGameMode();
 
+    public String getGameMode();
+
     /**
      * Experience level.
      *
      * @return
      */
+    public int getLevel();
+
     public int getLevel();
 
     /**
@@ -115,11 +166,15 @@ public interface PlayerStats {
      */
     public float getExp();
 
+    public float getExp();
+
     /**
      * Total experience points.
      *
      * @return
      */
+    public int getTotalExperience();
+
     public int getTotalExperience();
 
     /**
@@ -129,11 +184,15 @@ public interface PlayerStats {
      */
     public List<String> getPotionEffects();
 
+    public List<String> getPotionEffects();
+
     /**
      * The name of the server the player was last on.
      *
      * @return
      */
+    public String getServer();
+
     public String getServer();
 
     /**
@@ -143,11 +202,15 @@ public interface PlayerStats {
      */
     public String getWorld();
 
+    public String getWorld();
+
     /**
      * The coordinates where the player was last.
      *
      * @return
      */
+    public Coords getCoords();
+
     public Coords getCoords();
 
     /**
@@ -159,6 +222,8 @@ public interface PlayerStats {
      */
     public List<String> getGroups();
 
+    public List<String> getGroups();
+
     /**
      * The amount of money the player has. <br>
      * This is only available if the Vault plugin is installed and providing
@@ -168,11 +233,15 @@ public interface PlayerStats {
      */
     public double getMoney();
 
+    public double getMoney();
+
     /**
      * The name of the server where the player's bed is located.
      *
      * @return
      */
+    public String getBedServer();
+
     public String getBedServer();
 
     /**
@@ -182,11 +251,15 @@ public interface PlayerStats {
      */
     public String getBedWorld();
 
+    public String getBedWorld();
+
     /**
      * The coordinates of the player's bed.
      *
      * @return
      */
+    public Coords getBedCoords();
+
     public Coords getBedCoords();
 
     /**
@@ -196,11 +269,15 @@ public interface PlayerStats {
      */
     public int getJoins();
 
+    public int getJoins();
+
     /**
      * Number of times the player has quit.
      *
      * @return
      */
+    public int getQuits();
+
     public int getQuits();
 
     /**
@@ -210,11 +287,15 @@ public interface PlayerStats {
      */
     public Timestamp getFirstJoin();
 
+    public Timestamp getFirstJoin();
+
     /**
      * The date and time of the last join.
      *
      * @return
      */
+    public Timestamp getLastJoin();
+
     public Timestamp getLastJoin();
 
     /**
@@ -224,11 +305,15 @@ public interface PlayerStats {
      */
     public Timestamp getLastQuit();
 
+    public Timestamp getLastQuit();
+
     /**
      * Number of times the player has been kicked
      *
      * @return
      */
+    public int getKicks();
+
     public int getKicks();
 
     /**
@@ -238,6 +323,8 @@ public interface PlayerStats {
      */
     public Timestamp getLastKickTime();
 
+    public Timestamp getLastKickTime();
+
     /**
      * The message sent to the player during the last kick.
      *
@@ -245,11 +332,15 @@ public interface PlayerStats {
      */
     public String getLastKickMessage();
 
+    public String getLastKickMessage();
+
     /**
      * Number of times the player has died.
      *
      * @return
      */
+    public int getDeaths();
+
     public int getDeaths();
 
     /**
@@ -261,11 +352,15 @@ public interface PlayerStats {
      */
     public JSONObject getDeathCauses();
 
+    public JSONObject getDeathCauses();
+
     /**
      * The date and time the player last died.
      *
      * @return
      */
+    public Timestamp getLastDeathTime();
+
     public Timestamp getLastDeathTime();
 
     /**
@@ -275,11 +370,15 @@ public interface PlayerStats {
      */
     public String getLastDeathMessage();
 
+    public String getLastDeathMessage();
+
     /**
      * The number of other players killed by this player.
      *
      * @return
      */
+    public int getTotalPlayersKilled();
+
     public int getTotalPlayersKilled();
 
     /**
@@ -292,6 +391,8 @@ public interface PlayerStats {
      */
     public JSONObject getPlayersKilledMap();
 
+    public JSONObject getPlayersKilledMap();
+
     /**
      * The weapons used to kill other players. <br>
      * This is a JSON object where each key is a weapon name and the
@@ -301,11 +402,15 @@ public interface PlayerStats {
      */
     public JSONObject getPlayersKilledWeapons();
 
+    public JSONObject getPlayersKilledWeapons();
+
     /**
      * The date and time when the last player killed by this player was killed.
      *
      * @return
      */
+    public Timestamp getPlayersKilledLastTime();
+
     public Timestamp getPlayersKilledLastTime();
 
     /**
@@ -315,11 +420,15 @@ public interface PlayerStats {
      */
     public String getPlayersKilledLastName();
 
+    public String getPlayersKilledLastName();
+
     /**
      * The number of mobs killed by this player.
      *
      * @return
      */
+    public int getTotalMobsKilled();
+
     public int getTotalMobsKilled();
 
     /**
@@ -331,6 +440,8 @@ public interface PlayerStats {
      */
     public JSONObject getMobsKilledMap();
 
+    public JSONObject getMobsKilledMap();
+
     /**
      * The weapons used to kill mobs. <br>
      * This is a JSON object where each key is a weapon name and the
@@ -340,11 +451,15 @@ public interface PlayerStats {
      */
     public JSONObject getMobsKilledWeapons();
 
+    public JSONObject getMobsKilledWeapons();
+
     /**
      * The date and time when the last mob killed by this player was killed.
      *
      * @return
      */
+    public Timestamp getMobsKilledLastTime();
+
     public Timestamp getMobsKilledLastTime();
 
     /**
@@ -354,11 +469,15 @@ public interface PlayerStats {
      */
     public String lastMobKilled();
 
+    public String lastMobKilled();
+
     /**
      * The total number of blocks broken.
      *
      * @return
      */
+    public int getTotalBlocksBroken();
+
     public int getTotalBlocksBroken();
 
     /**
@@ -370,11 +489,15 @@ public interface PlayerStats {
      */
     public JSONObject getBlocksBrokenMap();
 
+    public JSONObject getBlocksBrokenMap();
+
     /**
      * The total number of blocks placed.
      *
      * @return
      */
+    public int getTotalBlocksPlaced();
+
     public int getTotalBlocksPlaced();
 
     /**
@@ -386,6 +509,8 @@ public interface PlayerStats {
      */
     public JSONObject getBlocksPlacedMap();
 
+    public JSONObject getBlocksPlacedMap();
+
     /**
      * Animals tamed by the player. <br>
      * This is a JSON object where each key is a mob name and the corresponding
@@ -395,11 +520,15 @@ public interface PlayerStats {
      */
     public int getAnimalsTamedMap();
 
+    public int getAnimalsTamedMap();
+
     /**
      * The total distance traveled.
      *
      * @return
      */
+    public float getTotalDistanceTraveled();
+
     public float getTotalDistanceTraveled();
 
     /**
@@ -411,6 +540,8 @@ public interface PlayerStats {
      */
     public JSONObject getDistancesTraveled();
 
+    public JSONObject getDistancesTraveled();
+
     /**
      * The amount of time traveled by different means. <br>
      * This is a JSON object where each key is a travel method and the
@@ -418,6 +549,8 @@ public interface PlayerStats {
      *
      * @return
      */
+    public JSONObject getTravelTimesMeans();
+
     public JSONObject getTravelTimesMeans();
 
     /**
@@ -429,11 +562,15 @@ public interface PlayerStats {
      */
     public JSONObject getTravelTimesBiome();
 
+    public JSONObject getTravelTimesBiome();
+
     /**
      * The total number of items dropped.
      *
      * @return
      */
+    public int getItemsDroppedCount();
+
     public int getItemsDroppedCount();
 
     /**
@@ -444,11 +581,15 @@ public interface PlayerStats {
      */
     public JSONObject getItemsDroppedMap();
 
+    public JSONObject getItemsDroppedMap();
+
     /**
      * The total number of items picked up.
      *
      * @return
      */
+    public int getItemsPickedUpCount();
+
     public int getItemsPickedUpCount();
 
     /**
@@ -459,11 +600,15 @@ public interface PlayerStats {
      */
     public JSONObject getItemsPickedUpMap();
 
+    public JSONObject getItemsPickedUpMap();
+
     /**
      * The total number of items crafted.
      *
      * @return
      */
+    public int getItemsCraftedCount();
+
     public int getItemsCraftedCount();
 
     /**
@@ -474,12 +619,16 @@ public interface PlayerStats {
      */
     public JSONObject getItemsCraftedMap();
 
+    public JSONObject getItemsCraftedMap();
+
     /**
      * This is a JSON object where each key is an egg type and the corresponding
      * value is a count.
      *
      * @return
      */
+    public JSONObject getEggsThrownMap();
+
     public JSONObject getEggsThrownMap();
 
     /**
@@ -490,6 +639,8 @@ public interface PlayerStats {
      */
     public JSONObject getFoodEatenMap();
 
+    public JSONObject getFoodEatenMap();
+
     /**
      * Number of times the player has slept in a bed.
      *
@@ -497,43 +648,86 @@ public interface PlayerStats {
      */
     public int getTimesSlept();
 
+    public int getTimesSlept();
+
     public int getArrowsShot();
+
+    public int getArrowsShot();
+
+    public int getFiresStarted();
 
     public int getFiresStarted();
 
     public int getFishCaught();
 
+    public int getFishCaught();
+
     public int getChatMessages();
+
+    public int getChatMessages();
+
+    public int getPortalsCroassed();
 
     public int getPortalsCroassed();
 
     public int getWaterBucketsFilled();
 
+    public int getWaterBucketsFilled();
+
     public int getWaterBucketsEmptied();
+
+    public int getWaterBucketsEmptied();
+
+    public int getLavaBucketsFilled();
 
     public int getLavaBucketsFilled();
 
     public int getLavaBucketsEmptied();
 
+    public int getLavaBucketsEmptied();
+
     public int getCowsMilked();
+
+    public int getCowsMilked();
+
+    public int getMooshroomsMilked();
 
     public int getMooshroomsMilked();
 
     public int getMooshroomsSheared();
 
+    public int getMooshroomsSheared();
+
     public int getSheepSheared();
+
+    public int getSheepSheared();
+
+    public int getSheepDyed();
 
     public int getSheepDyed();
 
     public int getLifetimeExpierience();
 
+    public int getLifetimeExpierience();
+
     public int getItemsEnchanted();
+
+    public int getItemsEnchanted();
+
+    public int getItemEnchantmentLevels();
 
     public int getItemEnchantmentLevels();
 
     public float getSessionTime();
 
+    public float getSessionTime();
+
+    public float getTotalTime();
+
     public float getTotalTime();
 
     public boolean getOnline();
+
+    public boolean getOnline();
+
 }
