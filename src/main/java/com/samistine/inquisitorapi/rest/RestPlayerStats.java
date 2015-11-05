@@ -6,6 +6,7 @@
 package com.samistine.inquisitorapi.rest;
 
 import com.samistine.inquisitorapi.Coords;
+import com.samistine.inquisitorapi.InqGamemode;
 import com.samistine.inquisitorapi.InqItem;
 import com.samistine.inquisitorapi.PlayerStats;
 import com.samistine.inquisitorapi.rest.objects.Stats;
@@ -81,8 +82,22 @@ public class RestPlayerStats implements PlayerStats {
     }
 
     @Override
-    public String getGameMode() {
-        return stats.gameMode;
+    public InqGamemode getGameMode() {
+        if (stats.gameMode != null) {
+            switch (stats.gameMode) {
+                case "CREATIVE":
+                    return InqGamemode.CREATIVE;
+                case "SURVIVAL":
+                    return InqGamemode.SURVIVAL;
+                case "ADVENTURE":
+                    return InqGamemode.ADVENTURE;
+                case "SPECTATOR":
+                    return InqGamemode.SPECTATOR;
+                default:
+                    return InqGamemode.NULL;
+            }
+        }
+        return InqGamemode.NULL;
     }
 
     @Override

@@ -145,11 +145,12 @@ public interface PlayerStats {
     /**
      * Last game mode.
      *
-     * @return
+     * <p>
+     * <b>This will return {@link InqGamemode#NULL} if we encounter a null.</b>
+     *
+     * @return The players {@link InqGamemode}
      */
-    public String getGameMode();
-
-    public String getGameMode();
+    public InqGamemode getGameMode();
 
     /**
      * Experience level.

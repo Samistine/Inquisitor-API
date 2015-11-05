@@ -8,6 +8,7 @@ package com.samistine.inquisitorapi.bukkit;
 import com.samistine.inquisitorapi.exceptions.PlayerNotFoundException;
 import com.frdfsnlght.inquisitor.api.API;
 import com.samistine.inquisitorapi.Coords;
+import com.samistine.inquisitorapi.InqGamemode;
 import com.samistine.inquisitorapi.InquisitorPlayer;
 import com.samistine.inquisitorapi.InqItem;
 import com.samistine.inquisitorapi.PlayerStats;
@@ -99,9 +100,23 @@ public class BukkitPlayerStats implements PlayerStats {
     }
 
     @Override
-    public String getGameMode() {
+    public InqGamemode getGameMode() {
         Object result = data.get("gameMode");
-        return (result instanceof String) ? (String) result : null;
+        if (result instanceof String) {
+            switch ((String) result) {
+                case "CREATIVE":
+                    return InqGamemode.CREATIVE;
+                case "SURVIVAL":
+                    return InqGamemode.SURVIVAL;
+                case "ADVENTURE":
+                    return InqGamemode.ADVENTURE;
+                case "SPECTATOR":
+                    return InqGamemode.SPECTATOR;
+                default:
+                    return InqGamemode.NULL;
+            }
+        }
+        return InqGamemode.NULL;
     }
 
     @Override
